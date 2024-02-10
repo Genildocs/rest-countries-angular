@@ -1,10 +1,12 @@
 @for (countrie of countries; track countries.id) {
-<div>
-  <div>
-    <img src="{{ countrie.flags.svg }}" alt="{{ countrie.name.common }}" />
-  </div>
-  <div>
-    <h1>Name: {{ countrie.name.common }}</h1>
-  </div>
-</div>
+<a href="/detail"
+  ><div>
+    <div>
+      <img src="{{ countrie.flags.svg }}" alt="{{ countrie.name.common }}" />
+    </div>
+    <div>
+      <h1>Name: {{ countrie.name.common }}</h1>
+    </div>
+  </div></a
+>
 }
