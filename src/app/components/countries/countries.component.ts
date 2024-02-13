@@ -5,8 +5,10 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './countries.component.html',
-  styleUrl: './countries.component.css'
+  styleUrl: './countries.component.css',
 })
 export class CountriesComponent {
+  countries = [];
 
+  getCountries(): void {}
 }
