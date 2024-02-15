@@ -1,0 +1,9 @@
+.dropdown-menu {
+    padding: 1rem;
+    width: 13rem;
+}
+
+li {
+    background-color: green;
+    margin-bottom: 0.5rem;
+}
