@@ -1,6 +1,30 @@
-<div class="lg:flex lg:items-center">
-    <app-input-search></app-input-search>
-    <app-filter-search></app-filter-search>
+<div>
+    <div class="lg:flex lg:items-center">
+        <app-input-search></app-input-search>
+        <app-filter-search></app-filter-search>
+    </div>
+    <div
+        class="mt-5 grid grid-cols-auto-fit gap-y-12 justify-center min-h-screen sm:gap-x-12"
+    >
+        @for (countrie of countries; track $index) {
+        <a routerLink="/detail" routerLinkActive="active">
+            <div class="h=[21rem1] shadow-concreto rounded-md overflow-hidden">
+                <div class="h-[10rem]">
+                    <img
+                        src="{{ countrie.flags.png }}"
+                        alt="Flag of {{ countrie.name.common }}"
+                        class="object-cover h-full w-full shadow-concreto"
+                    />
+                </div>
+                <div class="pl-6 pt-3 pb-5">
+                    <p class="font-bold mb-4 text-lg">
+                        {{ countrie.name.common }}
+                    </p>
+                </div>
+            </div>
+        </a>
+        }@empty {
+        <p>Loading...</p>
+        }
+    </div>
 </div>
-
-
