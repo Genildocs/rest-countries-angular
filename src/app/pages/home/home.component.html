@@ -8,7 +8,7 @@
     >
         @for (countrie of countries; track $index) {
         <a routerLink="/detail" routerLinkActive="active">
-            <div class="h=[21rem1] shadow-concreto rounded-md overflow-hidden">
+            <div class="h-[21rem] shadow-concreto rounded-md overflow-hidden">
                 <div class="h-[10rem]">
                     <img
                         src="{{ countrie.flags.png }}"
@@ -20,6 +20,22 @@
                     <p class="font-bold mb-4 text-lg">
                         {{ countrie.name.common }}
                     </p>
+                    <p class="mb-2.5">
+                        <span class="font-bold">Population: </span>
+                        {{
+                            countrie.population.toLocaleString("en", {
+                                minimumFractionDigits: 2
+                            })
+                        }}
+                    </p>
+                    <p class="mb-2.5">
+                        <span class="font-bold">Region: </span>
+                        {{ countrie.region }}
+                    </p>
+                    <p>
+                        <span class="font-bold">Capital: </span>
+                        {{ countrie.capital }}
+                    </p>
                 </div>
             </div>
         </a>
@@ -27,4 +43,5 @@
         <p>Loading...</p>
         }
     </div>
+    <button (click)="updateCountries()">Load more</button>
 </div>

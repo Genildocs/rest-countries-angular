@@ -1,9 +1,26 @@
 .dropdown-menu {
-    padding: 1rem;
+    position: relative;
+}
+
+.dropdown-menu .menu-list {
+    position: absolute;
+    padding: 0.5rem;
     width: 13rem;
+    opacity: 0;
+    visibility: hidden;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.dropdown-menu:hover .menu-list {
+    opacity: 1;
+    visibility: visible;
+}
+
+ul {
+    padding: 1rem;
 }
 
 li {
-    background-color: green;
     margin-bottom: 0.5rem;
 }

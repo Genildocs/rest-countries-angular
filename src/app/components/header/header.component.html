@@ -1,14 +1,12 @@
 <header
-  class="flex items-center justify-around gap-12 shadow-concreto h-[5rem]"
+    class="flex items-center justify-around gap-12 shadow-concreto h-[5rem]"
 >
-  <div>
-    <a routerLink="/">
-      <h1 class="text-sm font-extrabold">Where in the world?</h1></a
-    >
-  </div>
-  <div>
-    <button (click)="toggleDarkMode()" class="text-xs font-semibold">
-      {{ isDark ? "Light Mode" : "Dark Mode" }}
-    </button>
-  </div>
+    <div>
+        <h1 class="text-sm font-extrabold">Where in the world?</h1>
+    </div>
+    <div>
+        <button (click)="toggleDarkMode()" class="text-xs font-semibold">
+            {{ isDark ? "Light Mode" : "Dark Mode" }}
+        </button>
+    </div>
 </header>
