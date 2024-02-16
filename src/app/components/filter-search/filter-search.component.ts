@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { ApiService } from '../../service/api.service';
 @Component({
     selector: 'app-filter-search',
     standalone: true,
@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
     styleUrl: './filter-search.component.css',
 })
 export class FilterSearchComponent {
-    toggleFilter() {
-        console.log('Filter by region');
+    constructor(private apiService: ApiService) {}
+    ngOnInit() {}
+    toggleFilter(region: string) {
+        console.log(region);
     }
 }

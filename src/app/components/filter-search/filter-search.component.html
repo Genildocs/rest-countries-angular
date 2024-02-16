@@ -1,12 +1,12 @@
 <div>
     <div class="dropdown-menu mt-8 ml-6">
         <div class="p-4 shadow-concreto rounded-md bg-whiteText w-[10rem]">
-            <button (click)="toggleFilter()">Filter by Region</button>
+            <div>Filter by Region</div>
         </div>
         <div class="menu-list shadow-concreto rounded-md">
             <ul class="bg-whiteText shadow-concreto rounded-md">
                 <li>
-                    <button>Africa</button>
+                    <button (click)="toggleFilter('africa')">Africa</button>
                 </li>
                 <li>
                     <button>America</button>
