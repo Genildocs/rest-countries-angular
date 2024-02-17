@@ -24,9 +24,11 @@
     </div>
     <div>
         @for(item of countrie; track $index){
-            <p>{{item.name.common}}</p>
+        <p>{{ item.name.common }}</p>
         } @empty {
-            <p>Loading...</p>
+        <div class="flex justify-center items-center">
+            <div class="loader"></div>
+        </div>
         }
     </div>
 </div>
