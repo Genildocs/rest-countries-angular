@@ -18,7 +18,7 @@ import { ApiService } from '../../service/api.service';
 })
 export class HomeComponent {
     countries: any = [];
-    counter: number = 10;
+    counter: number = 8;
 
     constructor(private apiService: ApiService) {}
 
@@ -27,7 +27,7 @@ export class HomeComponent {
     }
 
     countCountries() {
-        this.counter += 10;
+        this.counter += 8;
         return this.counter;
     }
 

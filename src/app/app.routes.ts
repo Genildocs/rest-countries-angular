@@ -3,6 +3,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { DetailComponent } from './pages/detail/detail.component';
 
 export const routes: Routes = [
-  { path: '', title: 'home', component: HomeComponent },
-  { path: 'detail', title: 'detail', component: DetailComponent },
+    { path: '', title: 'rest-countries-home', component: HomeComponent },
+    {
+        path: 'detail',
+        title: 'rest-countries-detail',
+        component: DetailComponent,
+    },
 ];

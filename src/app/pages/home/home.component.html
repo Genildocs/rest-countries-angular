@@ -40,7 +40,9 @@
             </div>
         </a>
         }@empty {
-        <p>Loading...</p>
+        <div class="flex justify-center items-center">
+            <div class="loader"></div>
+        </div>
         }
     </div>
     <button (click)="updateCountries()">Load more</button>
