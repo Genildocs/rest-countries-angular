@@ -49,3 +49,4 @@ export class HomeComponent {
         this.fetchCountries(); // Atualiza os países
     }
 }
+
