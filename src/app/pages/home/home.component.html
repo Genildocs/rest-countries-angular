@@ -7,7 +7,7 @@
         class="mt-5 grid grid-cols-auto-fit gap-y-12 justify-center min-h-screen sm:gap-x-12"
     >
         @for (countrie of countries; track $index) {
-        <a routerLink="/detail" routerLinkActive="active">
+        <a [routerLink]="['/detail', countrie.name.common]" routerLinkActive="active">
             <div class="h-[21rem] shadow-concreto rounded-md overflow-hidden">
                 <div class="h-[10rem]">
                     <img
@@ -45,5 +45,7 @@
         </div>
         }
     </div>
-    <button (click)="updateCountries()">Load more</button>
+    <div class="flex items-center justify-center mt-2 mb-1">
+        <button (click)="updateCountries()" >Load more</button>
+    </div>
 </div>

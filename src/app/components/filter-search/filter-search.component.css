@@ -1,5 +1,6 @@
 .dropdown-menu {
     position: relative;
+    width: 10rem;
 }
 
 .dropdown-menu .menu-list {
@@ -10,6 +11,7 @@
     visibility: hidden;
     background-color: transparent;
     box-shadow: none;
+    transition: all 0.5s ease-in-out;
 }
 
 .dropdown-menu:hover .menu-list {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import {ActivatedRoute} from "@angular/router";
 import { CountrieDetail } from '../../interface/countries-detail';
 import {ApiService} from "../../service/api.service";
 
@@ -11,17 +12,21 @@ import {ApiService} from "../../service/api.service";
     styleUrl: './detail.component.css',
 })
 export class DetailComponent {
-    countrie: CountrieDetail[] = []
-    constructor(private apiService: ApiService) {}
+    countrie: any = []
+    countrieName: string = '';
+    constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
     ngOnInit(){
-        this.getCountrie('brazil')
+        this.route.params.subscribe(params=>{
+            this.countrieName = params['countrieName'];
+        })
+        this.getCountrie(this.countrieName)
     }
     getCountrie(param:string){
         this.apiService.getCountrie(param).subscribe({
             next: (countre:any) => {
             this.countrie = countre
-                console.log("Busca realizada com sucesso")
+                console.log('Busca concluída com sucesso!');
         },
             error: (err) =>
             {console.log('Error' + err)}
