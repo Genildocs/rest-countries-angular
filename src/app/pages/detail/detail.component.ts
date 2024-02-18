@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { CountrieDetail } from '../../interface/countries-detail';
+import { HeaderComponent } from '../../components/header/header.component';
 import { ApiService } from '../../service/api.service';
-import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-detail',
     standalone: true,
-    imports: [RouterLink, RouterLinkActive, NgFor],
+    imports: [RouterLink, RouterLinkActive, HeaderComponent],
     templateUrl: './detail.component.html',
     styleUrl: './detail.component.css',
 })

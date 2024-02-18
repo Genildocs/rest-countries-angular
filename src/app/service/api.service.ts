@@ -17,4 +17,8 @@ export class ApiService {
     getCountrie(param: string): Observable<any> {
         return this.http.get<any>(`${BASE_URL}/name/${param}`);
     }
+
+    filterCountriesByRegion(region: string): Observable<any> {
+        return this.http.get<any>(`${BASE_URL}/region/${region}`);
+    }
 }

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div>
     <div class="w-[30%] mt-[2rem] ml-[2rem] mr-[2rem] shadow-concreto">
         <a
@@ -26,10 +27,7 @@
         @for(item of countrie; track $index){
         <div class="w-[100%] max-w-[80%]">
             <div class="mb-5">
-                <img
-                    src="{{ item.flags.svg }}"
-                    alt="Flag of {{ item.name.common }}"
-                />
+                <img src="{{ item.flags.svg }}" alt="{{ item.flags.alt }}" />
             </div>
 
             <div class="mb-5">
@@ -39,7 +37,7 @@
                     alt="Coat of arms of {{ item.name.common }}"
                 />
                 <p>Coat of arms</p>
-                }@loading ( minimum 0.3s) {
+                }@loading ( minimum 0.5s) {
                 <div class="flex items-center justify-center">
                     <div class="loader"></div>
                 </div>

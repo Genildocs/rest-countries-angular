@@ -5,21 +5,13 @@
         </div>
         <div class="menu-list shadow-concreto rounded-md">
             <ul class="bg-whiteText shadow-concreto rounded-md">
+                @for(region of regions; track $index){
                 <li>
-                    <button (click)="toggleFilter('africa')">Africa</button>
+                    <button (click)="onRegionClick(region)">
+                        {{ region }}
+                    </button>
                 </li>
-                <li>
-                    <button (click)="toggleFilter('americas')">America</button>
-                </li>
-                <li>
-                    <button>Asia</button>
-                </li>
-                <li>
-                    <button>Europe</button>
-                </li>
-                <li>
-                    <button>Oceania</button>
-                </li>
+                }
             </ul>
         </div>
     </div>
