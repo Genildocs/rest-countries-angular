@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 const BASE_URL = 'https://restcountries.com/v3.1';
 
@@ -9,11 +10,11 @@ const BASE_URL = 'https://restcountries.com/v3.1';
 export class ApiService {
     constructor(private http: HttpClient) {}
 
-    getCountries() {
-        return this.http.get(`${BASE_URL}/all`);
+    getCountries(): Observable<any> {
+        return this.http.get<any>(`${BASE_URL}/all`);
     }
 
-    getCountrie(param: string) {
-        return this.http.get(`${BASE_URL}/name/${param}`);
+    getCountrie(param: string): Observable<any> {
+        return this.http.get<any>(`${BASE_URL}/name/${param}`);
     }
 }

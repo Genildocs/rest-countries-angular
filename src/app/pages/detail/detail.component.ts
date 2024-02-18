@@ -3,11 +3,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { CountrieDetail } from '../../interface/countries-detail';
 import { ApiService } from '../../service/api.service';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-detail',
     standalone: true,
-    imports: [RouterLink, RouterLinkActive],
+    imports: [RouterLink, RouterLinkActive, NgFor],
     templateUrl: './detail.component.html',
     styleUrl: './detail.component.css',
 })
@@ -29,7 +30,6 @@ export class DetailComponent {
         this.apiService.getCountrie(param).subscribe({
             next: (countre: any) => {
                 this.countrie = countre;
-                console.log('Busca concluída com sucesso!');
             },
             error: (err) => {
                 console.log('Error' + err);
@@ -37,6 +37,19 @@ export class DetailComponent {
         });
     }
 
-    protected readonly Object = Object;
-}
+    getCurriency() {
+        if (this.countrie) {
+            const currencies: any = Object.values(this.countrie[0].currencies);
+            return `${currencies[0].symbol}  ${currencies[0].name}`;
+        }
+        return 'Erro ao buscar a moeda';
+    }
 
+    getLanguages() {
+        if (this.countrie) {
+            const languages: any = Object.values(this.countrie[0].languages);
+            return languages.join(', ');
+        }
+        return 'Erro ao buscar os idiomas';
+    }
+}
