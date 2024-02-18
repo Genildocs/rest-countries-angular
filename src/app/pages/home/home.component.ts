@@ -22,7 +22,7 @@ export class HomeComponent {
 
     constructor(private apiService: ApiService) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.fetchCountries();
     }
 
@@ -49,4 +49,3 @@ export class HomeComponent {
         this.fetchCountries(); // Atualiza os países
     }
 }
-

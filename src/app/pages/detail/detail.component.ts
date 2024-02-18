@@ -36,4 +36,7 @@ export class DetailComponent {
             },
         });
     }
+
+    protected readonly Object = Object;
 }
+

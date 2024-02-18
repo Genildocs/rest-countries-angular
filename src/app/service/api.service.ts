@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {normalizeExtraEntryPoints} from "@angular-devkit/build-angular/src/tools/webpack/utils/helpers";
 
 const BASE_URL = 'https://restcountries.com/v3.1';
 
@@ -14,7 +13,7 @@ export class ApiService {
         return this.http.get(`${BASE_URL}/all`);
     }
 
-    getCountrie(param:string){
-       return this.http.get(`${BASE_URL}/name/${param}`)
+    getCountrie(param: string) {
+        return this.http.get(`${BASE_URL}/name/${param}`);
     }
 }

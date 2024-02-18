@@ -22,9 +22,52 @@
             <span class="ml-1">Back</span>
         </a>
     </div>
-    <div>
+    <div class="mt-20 mr-8 container-detail">
         @for(item of countrie; track $index){
-        <p>{{ item.name.common }}</p>
+        <div class="w-[100%] max-w-[80%]">
+            <img
+                src="{{ item.flags.svg }}"
+                alt="Flag of {{ item.name.common }}"
+            />
+        </div>
+        <div class="information">
+            <div class="title">
+                <p class="font-bold text-2xl mt-8 mb-8">
+                    {{ item.name.common }}
+                </p>
+            </div>
+            <div>
+                <p class="mb-2.5">
+                    <span class="font-semibold text-lg">Native Name:</span>
+                    {{item.altSpellings[1]}}
+                </p>
+                <p class="mb-2.5">
+                    <span class="font-semibold text-lg">Population:</span>
+                    {{item.population.toLocaleString("en", {
+                    minimumFractionDigits: 2
+                })}}
+                </p>
+                <p class="mb-2.5">
+                    <span class="font-semibold text-lg">Region:</span>
+                    {{item.region}}
+                </p>
+                <p class="mb-2.5">
+                    <span class="font-semibold text-lg">Sub Region:</span>
+                    {{item.subregion}}
+                </p>
+                <p class="mb-12">
+                    <span class="font-semibold text-lg">Capital:</span>
+                    {{item.capital}}
+                </p>
+            </div>
+            <div>
+                <p class="mb-2.5">
+                    <span class="font-semibold text-lg">Top Level Domain:</span>
+                    {{item.tld}}
+                </p>
+            </div>
+        </div>
+
         } @empty {
         <div class="flex justify-center items-center">
             <div class="loader"></div>

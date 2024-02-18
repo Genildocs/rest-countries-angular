@@ -20,7 +20,7 @@ module.exports = {
         Bluehover: "#066bc0",
       },
       gridTemplateColumns: {
-        "auto-fit": "repeat(auto-fit, minmax(5rem, 16.5rem))",
+        "auto-fit": "repeat(auto-fit, minmax(5rem, 18.5rem))",
       },
 
       boxShadow: {

@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { DetailComponent } from './pages/detail/detail.component';
-import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.component";
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
     { path: '', title: 'rest-countries-home', component: HomeComponent },
@@ -10,5 +10,6 @@ export const routes: Routes = [
         title: 'rest-countries-detail',
         component: DetailComponent,
     },
-    {path: '**', component: PageNotFoundComponent},
+    { path: 'notfound', component: PageNotFoundComponent },
+    { path: '**', redirectTo: '/notfound' },
 ];
