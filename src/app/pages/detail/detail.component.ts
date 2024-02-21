@@ -14,6 +14,7 @@ import { ApiService } from '../../service/api.service';
 export class DetailComponent {
     countrie: any = [];
     countrieName: string = '';
+
     constructor(
         private apiService: ApiService,
         private route: ActivatedRoute
@@ -44,11 +45,17 @@ export class DetailComponent {
         return 'Erro ao buscar a moeda';
     }
 
-    getLanguages() {
+    getLanguages(): string {
         if (this.countrie) {
-            const languages: any = Object.values(this.countrie[0].languages);
+            const languages: string[] = Object.values(
+                this.countrie[0].languages
+            );
             return languages.join(', ');
         }
         return 'Erro ao buscar os idiomas';
+    }
+
+    getBorder(border: string) {
+        this.getCountrie(border);
     }
 }

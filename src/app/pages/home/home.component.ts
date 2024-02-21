@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
         this.apiService.getCountries().subscribe({
             next: (countries: any) => {
                 this.countries = countries.slice(0, this.counter);
-                console.log('Busca concluída com sucesso! ');
+                console.log('Busca concluída com sucesso! ', this.countries);
             },
             error: (err) => console.log('Erro: ' + err),
         });
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
         this.apiService.filterCountriesByRegion(region).subscribe({
             next: (filteredCountries: any) => {
                 this.countries = filteredCountries;
-                console.log('Países filtrados por região: ', this.countries);
+                console.log('Países filtrados por região: ');
             },
             error: (err) => console.log('Erro ao filtrar por região: ' + err),
         });

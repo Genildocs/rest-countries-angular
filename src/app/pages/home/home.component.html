@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div>
-    <div class="lg:flex lg:items-center">
+    <div class="lg:flex lg:items-center lg:justify-around">
         <app-input-search></app-input-search>
         <app-filter-search
             (filterRegion)="filterByRegion($event)"
@@ -10,10 +10,7 @@
         class="mt-5 grid grid-cols-auto-fit gap-y-12 justify-center min-h-screen sm:gap-x-12"
     >
         @for (countrie of countries; track $index) {
-        <a
-            [routerLink]="['/detail', countrie.name.common.toLowerCase()]"
-            routerLinkActive="active"
-        >
+        <a [routerLink]="['/detail', countrie.cca3]" routerLinkActive="active">
             <div class="h-[21rem] shadow-concreto rounded-md overflow-hidden">
                 <div class="h-[10rem]">
                     <img
