@@ -20,7 +20,7 @@ import { ApiService } from '../../service/api.service';
 })
 export class HomeComponent implements OnInit {
     countries: any = [];
-    counter: number = 8;
+    counter: number = 10;
 
     constructor(private apiService: ApiService) {}
 
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     }
 
     countCountries() {
-        this.counter += 8;
+        this.counter += 10;
         return this.counter;
     }
 
@@ -59,5 +59,17 @@ export class HomeComponent implements OnInit {
         }
         this.countCountries(); // Atualiza o valor de count
         this.fetchCountries(); // Atualiza os países
+    }
+
+    searchCountrie(param: string) {
+        this.apiService.getCountrie(param).subscribe({
+            next: (countre: any) => {
+                this.countries = countre;
+                console.log('Busca concluída com sucesso! ', this.countries);
+            },
+            error: (err) => {
+                console.log('Error' + err);
+            },
+        });
     }
 }

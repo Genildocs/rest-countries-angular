@@ -30,6 +30,7 @@ export class DetailComponent {
         this.apiService.getCountrie(param).subscribe({
             next: (countre: any) => {
                 this.countrie = countre;
+                console.log(this.countrie);
             },
             error: (err) => {
                 console.log('Error' + err);
@@ -56,6 +57,14 @@ export class DetailComponent {
     }
 
     getBorder(border: string) {
-        this.getCountrie(border);
+        this.apiService.getBorder(border).subscribe({
+            next: (countre: any) => {
+                this.countrie = countre;
+                console.log(this.countrie);
+            },
+            error: (err) => {
+                console.log('Error' + err);
+            },
+        });
     }
 }

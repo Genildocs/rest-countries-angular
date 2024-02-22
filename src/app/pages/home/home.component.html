@@ -1,7 +1,9 @@
 <app-header></app-header>
 <div>
-    <div class="lg:flex lg:items-center lg:justify-around">
-        <app-input-search></app-input-search>
+    <div class="lg:flex lg:items-center lg:justify-between lg:pr-6">
+        <app-input-search
+            (searchRegion)="searchCountrie($event)"
+        ></app-input-search>
         <app-filter-search
             (filterRegion)="filterByRegion($event)"
         ></app-filter-search>
@@ -10,7 +12,10 @@
         class="mt-5 grid grid-cols-auto-fit gap-y-12 justify-center min-h-screen sm:gap-x-12"
     >
         @for (countrie of countries; track $index) {
-        <a [routerLink]="['/detail', countrie.cca3]" routerLinkActive="active">
+        <a
+            [routerLink]="['/detail', countrie.name.common]"
+            routerLinkActive="active"
+        >
             <div class="h-[21rem] shadow-concreto rounded-md overflow-hidden">
                 <div class="h-[10rem]">
                     <img
@@ -49,7 +54,7 @@
         }
     </div>
     <div class="flex items-center justify-center mt-2 mb-1">
-        <button class="bg-red-600" (click)="updateCountries()">
+        <button class="bg-red-600 p-1" (click)="updateCountries()">
             Load more
         </button>
     </div>
